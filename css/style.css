@@ -1,0 +1,255 @@
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 16px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: 400;
+}
+
+:root {
+  --columns-card: 0;
+  --rows-card: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-areas: "header header" "nav main" "footer footer";
+  grid-template-rows: 5vh 91vh 4vh;
+  grid-template-columns: 14vw 86vw;
+}
+
+#pageHeader {
+  grid-area: header;
+}
+
+#pageNav {
+  grid-area: nav;
+}
+
+#pageMain {
+  grid-area: main;
+}
+
+#pageFooter {
+  grid-area: footer;
+}
+
+.nav {
+  background-color: rgb(6, 61, 63);
+  color: rgb(156, 250, 242);
+  font-weight: 700;
+}
+
+.nav__div {
+  display: block;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+}
+
+.nav__div-menu {
+  cursor: pointer;
+  line-height: 3rem;
+  padding: 1.6rem 1.6rem;
+  border-width: 1.6rem 1.6rem 1.6rem 1.6rem;
+  border-color: rgb(6, 61, 63);
+  border-style: solid;
+  background-color: rgb(22, 169, 174);
+}
+
+.nav__div-menu:hover {
+  color: rgb(240, 209, 56);
+  background-color: rgb(10, 110, 100);
+}
+
+.main {
+  background-color: rgb(243, 221, 161);
+}
+
+.main__div {
+  display: grid;
+  grid-template-columns: repeat(var(--columns-card), 1fr);
+  grid-template-rows: repeat(var(--rows-card), 1fr);
+}
+.main__div .div__card {
+  width: calc(86vw / var(--columns-card));
+  height: calc(91vh / var(--rows-card));
+  position: relative;
+}
+.main__div .div__card .card-face,
+.main__div .div__card .card-back,
+.main__div .div__card .card-checked,
+.main__div .div__card .card-off-checked {
+  width: min(86vw / var(--columns-card) * 0.92, 91vh / var(--rows-card) * 0.92);
+  height: min(86vw / var(--columns-card) * 0.92, 91vh / var(--rows-card) * 0.92);
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+.main__div .div__card .card-back:hover {
+  border-color: rgb(68, 202, 206);
+  border-style: solid;
+  border-width: 0.65rem;
+}
+.main__div .div__card .card-checked {
+  opacity: 0.3;
+  border-color: rgb(248, 94, 5);
+  border-style: solid;
+  border-width: 0.65rem;
+}
+.main__div .div__card .card-face {
+  border-color: rgb(68, 202, 206);
+  border-style: solid;
+  border-width: 0.75rem;
+}
+
+.footer,
+.header {
+  background-color: rgb(68, 202, 206);
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-shadow: 0.3rem 0.3rem 1rem rgb(7, 68, 64);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.header {
+  text-transform: uppercase;
+  font-size: 2.3rem;
+  color: rgb(213, 242, 242);
+}
+
+.git:hover {
+  color: rgb(26, 41, 215);
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 26%;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  html {
+    font-size: 31%;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  html {
+    font-size: 42%;
+  }
+}
+@media (min-width: 992px) and (max-width: 1200px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (min-width: 1200px) {
+  html {
+    font-size: 66%;
+  }
+}
+@media all and (orientation: portrait) {
+  .main__div {
+    grid-template-columns: repeat(var(--rows-card), 1fr);
+    grid-template-rows: repeat(var(--columns-card), 1fr);
+  }
+  .main__div .div__card {
+    width: calc(86vw / var(--rows-card));
+    height: calc(91vh / var(--columns-card));
+  }
+  .main__div .div__card .card-face,
+.main__div .div__card .card-back,
+.main__div .div__card .card-checked,
+.main__div .div__card .card-off-checked {
+    width: min(86vw / var(--rows-card) * 0.95, 91vh / var(--columns-card) * 0.95);
+    height: min(86vw / var(--rows-card) * 0.95, 91vh / var(--columns-card) * 0.95);
+  }
+}
+
