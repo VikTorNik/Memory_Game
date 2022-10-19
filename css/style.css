@@ -160,33 +160,63 @@
   color: white;
 }
 
-@media (max-width: 576px) {
+@media all and (min-width: 10em) and (max-width: 21.94em) {
   html {
-    font-size: 26%;
+    font-size: 0.1em;
   }
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media all and (min-width: 22em) and (max-width: 27.94em) {
   html {
-    font-size: 31%;
+    font-size: 0.22em;
   }
 }
 
-@media (min-width: 768px) and (max-width: 992px) {
+@media all and (min-width: 28em) and (max-width: 33.94em) {
   html {
-    font-size: 42%;
+    font-size: 0.28em;
   }
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
+@media all and (min-width: 34em) and (max-width: 41.94em) {
   html {
-    font-size: 55%;
+    font-size: 0.34em;
   }
 }
 
-@media (min-width: 1200px) {
+@media all and (min-width: 42em) and (max-width: 45.94em) {
   html {
-    font-size: 66%;
+    font-size: 0.42em;
+  }
+}
+
+@media all and (min-width: 46em) and (max-width: 47.94em) {
+  html {
+    font-size: 0.46em;
+  }
+}
+
+@media all and (min-width: 48em) and (max-width: 54.94em) {
+  html {
+    font-size: 0.48em;
+  }
+}
+
+@media all and (min-width: 55em) and (max-width: 61.94em) {
+  html {
+    font-size: 0.55em;
+  }
+}
+
+@media all and (min-width: 62em) and (max-width: 69.94em) {
+  html {
+    font-size: 0.62em;
+  }
+}
+
+@media all and (min-width: 70em) and (max-width: 140em) {
+  html {
+    font-size: 0.7em;
   }
 }
 
